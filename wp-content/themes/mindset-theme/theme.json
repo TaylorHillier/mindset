@@ -1,0 +1,46 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "text": true,
+            "background": true,
+            "custom": true,
+            "customDuotone": true,
+            "customGradient": true
+        },
+        "spacing": {
+            "margin": true,
+            "padding": true
+        },
+        "typography": {
+            "customFontSize": true,
+            "lineHeight": true,
+            "dropCap": true,
+            "fontStyle": true,
+            "fontWeight": true,
+            "letterSpacing": true,
+            "textDecoration": true,
+            "textTransform": true
+        },
+        "blocks": {
+            "core/code": {
+                "typography": {
+                    "fontSizes": []
+                }
+            }
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core/code": {
+                "color": {
+                    "background": "#4a4a4a",
+                    "text": "#ffffff"
+                },
+                "typography": {
+                    "fontSize": "1.25rem"
+                }
+            }
+        }
+    }
+}

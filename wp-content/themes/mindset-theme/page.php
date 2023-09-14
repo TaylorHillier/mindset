@@ -28,6 +28,14 @@ get_header();
 				comments_template();
 			endif;
 
+			if (is_page('contact')) {
+				$address = get_field('address_contact');
+				$email = get_field('email_contact');
+			
+				echo '<div class="contact-address">' . esc_html($address) . '</div>';
+				echo '<a href="mailto:' . esc_attr($email) . '" class="contact-email">' . esc_html($email) . '</a>';
+			}
+
 		endwhile; // End of the loop.
 		?>
 
