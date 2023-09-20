@@ -19,8 +19,10 @@ get_header();
 <?php
 
     while(have_posts()) :
+        the_post();
         ?>
             <h1><?php the_title(); ?></h1>
+            <?php the_content();?>
         <?php
 
         $args = array(
@@ -30,8 +32,9 @@ get_header();
             'orderby'        => 'title'
         );
          
-        $query = new WP_Query( $args );
-         
+        $query = new WP_Query( $args );?>
+        <div class = "service-links">
+        <?php
         if ( $query -> have_posts() ) {
         
             while ( $query -> have_posts() ) {
@@ -40,6 +43,9 @@ get_header();
             }
             wp_reset_postdata();
         }
+        ?>
+        </div>
+        <?php
 
         $taxonomy = 'fwd-services';
         $terms    = get_terms(
@@ -71,27 +77,13 @@ get_header();
                 // Check if there are posts for the current term
                 if ( $query->have_posts() ) :
                     ?>
-                    <ul>
-                    <?php
-                    while( $query->have_posts() ) :
-                        $query->the_post(); 
-                        $service_id = get_the_ID();
-                        $service_title = get_the_title();
-                        ?>
-                        <li><a href="#service-<?php echo $service_id; ?>"><?php echo $service_title ?></a></li>
-                        <?php
-                    endwhile;
-                    ?>
-                    </ul>
                     <?php
                     while( $query->have_posts() ) :
                         $query->the_post(); 
                         ?>
                         <article>
-                            <a href="<?php the_permalink(); ?>">
-                                <h2><?php the_title(); ?></h2>
-                                
-                            </a>
+                                <h3><?php the_title(); ?></h3>
+
                             <?php 
                                 $service_content = get_field('service_text');
                                 if($service_content){
@@ -107,10 +99,12 @@ get_header();
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
-    <?php endwhile; ?>
+    <?php endwhile; 
+    wp_reset_query();?>
 
 
 </main><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

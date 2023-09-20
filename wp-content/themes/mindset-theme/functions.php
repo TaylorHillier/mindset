@@ -39,16 +39,17 @@ function fwd_setup() {
 		*/
 	add_theme_support( 'title-tag' );
 
-	/*
+	// Custom Crop Sizes
+	add_image_size('custom', 960, 639, true);
+	add_image_size('other-custom', 400, 200, true);
+	add_image_size('portrait-blog', 200, 250, true);
+
+		/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
-
-	// Custom Crop Sizes
-	add_image_size('large', 200, 250, true);
-	add_image_size('larger', 400, 200, true);
+		add_theme_support( 'post-thumbnails' );
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -171,7 +172,7 @@ add_action( 'widgets_init', 'fwd_widgets_init' );
 function fwd_scripts() {
 	wp_enqueue_style(
 		'fwd-googlefonts',
-		'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Serif:wght@700&display=swap',
 		array(),
 		null,
 		'all'
@@ -309,4 +310,8 @@ function fwd_post_filter( $use_block_editor, $post ) {
 }
 add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
 
-
+function enqueue_scroll_to_top_script() {
+	wp_enqueue_script('backtotop', get_template_directory_uri() . '/js/backtotop.js', array(), '1.0');
+	wp_enqueue_style('backtotop', get_template_directory_uri() . '/css/backtotop.css', array(), '1.0');
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_scroll_to_top_script');

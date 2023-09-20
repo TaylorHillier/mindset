@@ -36,14 +36,14 @@ get_header();
 			$query = new WP_Query( $args );
 
 			if ( $query->have_posts() ) {
-				echo '<section><h2>' . esc_html__('Web') . '</h2>';
+				echo '<section class = "work-section"><h2>' . esc_html__('Web') . '</h2>';
 				while( $query->have_posts() ) {
 					$query->the_post(); 
 					?>
-					<article>
+					<article class = "work-item">
 						<a href="<?php the_permalink(); ?>">
 							<h2><?php the_title(); ?></h2>
-							<?php the_post_thumbnail('large'); ?>
+							<?php the_post_thumbnail('custom'); ?>
 						</a>
 						<?php the_excerpt(); ?>
 					</article>
@@ -69,16 +69,15 @@ get_header();
 			$query = new WP_Query( $args );
 
 			if ( $query->have_posts() ) {
-				echo '<section><h2>'. esc_html__('Photo') .'</h2>';
+				echo '<section class = "work-section"><h2>'. esc_html__('Photo') .'</h2>';
 				while( $query->have_posts() ) {
 					$query->the_post(); 
 					?>
-					<article>
+					<article class = "work-item">
 						<a href="<?php the_permalink(); ?>">
 							<h2><?php the_title(); ?></h2>
 							<?php the_post_thumbnail('large'); ?>
 						</a>
-						<?php the_excerpt(); ?>
 					</article>
 					<?php
 				}

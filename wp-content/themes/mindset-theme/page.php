@@ -31,8 +31,7 @@ get_header();
 			if (is_page('contact')) {
 				$address = get_field('address_contact');
 				$email = get_field('email_contact');
-			
-				echo '<div class="contact-address">' . esc_html($address) . '</div>';
+				echo '<div class="contact-address">' . $address .'</div>';
 				echo '<a href="mailto:' . esc_attr($email) . '" class="contact-email">' . esc_html($email) . '</a>';
 			}
 

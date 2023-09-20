@@ -16,7 +16,6 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -26,12 +25,16 @@ get_header();
 			
 		$args = array(
 			'post_type'      => 'fwd-testimonial',
-			'posts_per_page' => -1
+			'posts_per_page' => -1,
+			
 		);
 
 		$query = new WP_Query( $args );
 		
 		if ( $query -> have_posts() ){
+			?>
+			<h3>Testimonials</h3>
+			<?php
 			while ( $query -> have_posts() ) {
 				$query -> the_post();
 				the_content();
@@ -47,5 +50,4 @@ get_header();
 </main><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

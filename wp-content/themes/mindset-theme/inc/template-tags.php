@@ -128,7 +128,7 @@ if ( ! function_exists( 'fwd_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail('larger'); ?>
+				<?php the_post_thumbnail('large'); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

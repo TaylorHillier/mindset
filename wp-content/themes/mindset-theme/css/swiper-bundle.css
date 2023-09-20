@@ -19,7 +19,7 @@
 }
 /* FONT_END */
 :root {
-  --swiper-theme-color: #007aff;
+  --swiper-theme-color: #fff200;
   /*
   --swiper-preloader-color: var(--swiper-theme-color);
   --swiper-wrapper-transition-timing-function: initial;
@@ -284,53 +284,7 @@
 .swiper-navigation-disabled .swiper-button-next {
   display: none !important;
 }
-.swiper-button-prev svg,
-.swiper-button-next svg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform-origin: center;
-}
-.swiper-rtl .swiper-button-prev svg,
-.swiper-rtl .swiper-button-next svg {
-  transform: rotate(180deg);
-}
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
-  left: var(--swiper-navigation-sides-offset, 10px);
-  right: auto;
-}
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-  right: var(--swiper-navigation-sides-offset, 10px);
-  left: auto;
-}
-.swiper-button-lock {
-  display: none;
-}
-/* Navigation font start */
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  font-family: swiper-icons;
-  font-size: var(--swiper-navigation-size);
-  text-transform: none !important;
-  letter-spacing: 0;
-  font-variant: initial;
-  line-height: 1;
-}
-.swiper-button-prev:after,
-.swiper-rtl .swiper-button-next:after {
-  content: 'prev';
-}
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-  right: var(--swiper-navigation-sides-offset, 10px);
-  left: auto;
-}
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-  content: 'next';
-}
+
 /* Navigation font end */
 :root {
   /*
@@ -405,12 +359,12 @@
   transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  width: 20px;
+  height: 20px;
   display: inline-block;
-  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
-  background: var(--swiper-pagination-bullet-inactive-color, #000);
-  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.2;
 }
 button.swiper-pagination-bullet {
   border: none;

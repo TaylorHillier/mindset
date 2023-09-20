@@ -22,7 +22,7 @@ get_header();
 			the_post();
 			?>
 
-			<h1><?php the_title(); ?></h1>'
+			<h1><?php the_title(); ?></h1>
 			
 			<section class="home-intro">
 			<?php
@@ -62,7 +62,7 @@ get_header();
 						<article>
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail('medium'); ?>
-								<h3><?php the_title(); ?></h3>
+								<p><?php the_title(); ?></p>
 							</a>
 						</article>
 						<?php
@@ -157,7 +157,7 @@ get_header();
 						?>
 						<article>
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail('larger')?>
+								<?php the_post_thumbnail('other-custom')?>
 								<h3><?php the_title(); ?></h3>
 							</a>
 							<p><?php the_time('F j, Y');?></p>
@@ -175,5 +175,4 @@ get_header();
 	</main><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
